@@ -13,9 +13,6 @@ export class MusicalRow {
   musical_zone_id: Types.ObjectId;
 
   @Prop()
-  seats_no: string;
-
-  @Prop()
   user_id: Types.ObjectId;
 
   @Prop({ default: false })

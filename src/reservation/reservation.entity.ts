@@ -7,6 +7,9 @@ export class Reservation {
   _id: Types.ObjectId;
 
   @Prop()
+  musical_id: Types.ObjectId;
+
+  @Prop()
   musical_row_id: Types.ObjectId;
 
   @Prop()

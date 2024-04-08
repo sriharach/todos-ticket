@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Types, Document } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { MusicalZone } from './musical-zone.entity';
-import { Musical } from '@/musical/musical.entity';
-import { MusicalRowService } from '@/musical-row/musical-row.service';
 import { JwtPayload } from '@/auth/jwt.strategy';
 
 @Injectable()
 export class MusicalZoneService {
   constructor(
-    @InjectModel(MusicalZone.name) private musicalZoneModel: Model<MusicalZone>,
+    @InjectModel(MusicalZone.name)
+    private readonly musicalZoneModel: Model<MusicalZone>,
   ) {}
 
   async findOne(_id: MusicalZone['_id']) {

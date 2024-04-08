@@ -5,6 +5,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 
 export type JwtPayload = {
   sub: Types.ObjectId;
+  role: Types.ObjectId
   username: string;
 };
 

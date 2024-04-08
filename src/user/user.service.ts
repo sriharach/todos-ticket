@@ -1,12 +1,12 @@
 import { User } from '@/interface/auth.interface';
 import wait from '@/util/wait';
-import { CACHE_MANAGER } from '@nestjs/cache-manager';
+// import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { Cache } from 'cache-manager';
+// import { Cache } from 'cache-manager';
 
 @Injectable()
 export class UserService {
-  constructor(@Inject(CACHE_MANAGER) private caheManager: Cache) {}
+  // constructor(@Inject(CACHE_MANAGER) private caheManager: Cache) {}
 
   // async refCaheMenager() {
   //   const cachedData = await this.caheManager.get<User[]>('users');

@@ -8,7 +8,8 @@ import { MusicalZoneService } from '@/musical-zone/musical-zone.service';
 @Injectable()
 export class MusicalRowService {
   constructor(
-    @InjectModel(MusicalRow.name) private musicalRowModel: Model<MusicalRow>,
+    @InjectModel(MusicalRow.name)
+    private readonly musicalRowModel: Model<MusicalRow>,
     private musicalZoneService: MusicalZoneService,
   ) {}
 

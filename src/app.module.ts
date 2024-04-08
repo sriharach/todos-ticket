@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { CacheInterceptor, CacheModule } from '@nestjs/cache-manager';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { redisStore } from 'cache-manager-redis-yet';
@@ -11,6 +10,7 @@ import { MusicalModule } from './musical/musical.module';
 import { MusicalRowModule } from './musical-row/musical-row.module';
 import { MusicalZoneModule } from './musical-zone/musical-zone.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { CacheInterceptor, CacheModule } from '@nestjs/cache-manager';
 
 @Module({
   providers: [

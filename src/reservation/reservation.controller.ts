@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ReservationService } from './reservation.service';
 import { Reservation } from './reservation.entity';
 import { AccessTokenGuard } from '@/auth/accessToken.guard';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @Controller('reservation')
 export class ReservationController {
@@ -13,6 +14,7 @@ export class ReservationController {
     return this.reservationService.create(req.user, body);
   }
 
+  @UseInterceptors(CacheInterceptor)
   @UseGuards(AccessTokenGuard)
   @Get() 
   musicalBooking(@Req() req) {
